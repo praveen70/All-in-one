@@ -2,7 +2,7 @@ const express = require('express');
 const connection = require('./config/config');
 const user = require('./controller/user/user');
 const login = require('./controller/user/login');
-
+const flight = require('./flight/flight');
 const jwt = require('jsonwebtoken')
 
 // const path = require('path');
@@ -37,7 +37,7 @@ app.set('port', process.env.port || port); // set express to use this port
 
 app.post('/signup', user.createUser);
 app.post('/login',  login.loginUser);
-
+app.get('/flight', flight.getData);
 
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);

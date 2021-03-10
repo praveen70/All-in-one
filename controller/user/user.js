@@ -1,6 +1,7 @@
 const bcrypt = require("bcryptjs");
 const connection = require('../../config/config');
 
+
 module.exports = {
     createUser: async (req, res, next) => {
         const password = await bcrypt.hash(req.body.password, 10)
@@ -38,5 +39,8 @@ module.exports = {
         }
     },
 };
+
+
+
 
 
